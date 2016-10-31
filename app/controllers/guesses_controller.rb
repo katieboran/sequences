@@ -22,7 +22,6 @@ if g.first_num != nil
 @third = params["third_number"]
 
 if @first == nil
-    render("guesses/index.html.erb")
 elsif @first < @second && @second < @third
   @outcome = "Yes!"
 elsif

@@ -1,0 +1,71 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+
+<p>A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+
+  Here's how it works:
+
+  We've chosen a rule that some sequences of three numbers obey - and some do not. Your job is to guess wat the rule is.
+
+  We'll start by telling you that the sequence 2, 4, 8 obeys the rule:
+  <ul>
+  <li type="disc">
+        2, 4, and 8 obeys the rule
+  </li>
+</ul>
+
+  <p>
+    Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.
+  </p>
+
+  <% @list.each do |guess| %>
+  <li>
+  <%= guess.first_num %>
+  <%= guess.second_num %>
+  <%= guess.third_num %>
+  </li>
+  <% end %>
+
+  <ul>
+    <li type="disc">1, 2, 3 Yes!</li>
+    <li type="disc">2, 4, 3 No.</li>
+    <li type="disc">83838, 85754839, 94899504 Yes!</li>
+    <li type="disc"><%= @first%> ,<%= @second %>,<%= @thir %>
+     </li>
+  </ul>
+  <p>
+      Enter a sequence:
+  </p>
+
+  </section>
+
+</p>
+
+<form class="" action="/all_guesses" method="get">
+  <label for="first">First Number: </label>
+  <input name="first_num" id="first" type ="text" placeholder = "The first number">
+  <label for="second">Second number:</label>
+  <input name="second_num" id="second" type = "text" placeholder = "The second number">
+  <label for="third">Third number:</label>
+  <input name="third_num" id="third" type = "text" placeholder = "The third number">
+
+  <button>Check</button>
+</form>
+
+<p>
+  When you think you know the rule, describe it in words below and then submit your answer. <b> Make sure you’re right; you won’t get a second chance.</b>
+</p>
+
+
+<form action="http://localhost:3000/show_answer">
+  <label for="answer">Your answer:</label>
+<div>
+  <textarea name="q" id ="answer" placeholder="Enter your answer" rows="8" cols="40"></textarea>
+</div>
+
+  <button>I think I know it</button>
+
+</form>
+
+<hr>
+
+<a href="#">Reset</a>
